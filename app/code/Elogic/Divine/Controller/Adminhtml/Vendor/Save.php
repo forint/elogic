@@ -9,6 +9,7 @@
 namespace Elogic\Divine\Controller\Adminhtml\Vendor;
 
 use Magento\Backend\App\Action;
+use Magento\Framework\Controller\ResultFactory;
 
 class Save extends Action
 {
@@ -16,17 +17,38 @@ class Save extends Action
      * @var \Elogic\Divine\Model\Vendor
      */
     protected $_model;
+    /**
+     * @var \Magento\Framework\App\RequestInterface
+     */
+    protected $_request;
+    /**
+     * @var \Magento\Framework\Filesystem
+     */
+    protected $filesystem;
+    /**
+     * @var \Magento\Framework\Filesystem
+     */
+    protected $imageUploader;
 
     /**
      * @param Action\Context $context
+     * @param \Magento\Framework\App\RequestInterface $request
      * @param \Elogic\Divine\Model\Vendor $model
+     * @param \Magento\Framework\Filesystem $filesystem
+     * @param \Elogic\Divine\Model\Vendor\ImageUploader $imageUploader
      */
     public function __construct(
         Action\Context $context,
-        \Elogic\Divine\Model\Vendor $model
+        \Magento\Framework\App\RequestInterface $request,
+        \Elogic\Divine\Model\Vendor $model,
+        \Magento\Framework\Filesystem $filesystem,
+        \Elogic\Divine\Model\Vendor\ImageUploader $imageUploader
     ) {
         parent::__construct($context);
         $this->_model = $model;
+        $this->_request = $request;
+        $this->filesystem = $filesystem;
+        $this->imageUploader = $imageUploader;
     }
 
     /**
@@ -55,6 +77,31 @@ class Save extends Action
             if ($id) {
                 $model->load($id);
             }
+
+            if (is_dir($this->imageUploader->getBaseTmpPath())){
+                chmod($this->imageUploader->getBaseTmpPath(), 777);
+            }
+
+            if (is_dir($this->imageUploader->getBasePath())){
+                chmod($this->imageUploader->getBasePath(), 777);
+            }
+
+            $imageId = $this->_request->getParam('vendor_image', 'vendor_image');
+            try {
+                $result = $this->imageUploader->saveFileToTmpDir($imageId);
+            } catch (\Exception $e) {
+                $result = [
+                    'error' => $e->getMessage(),
+                    'errorcode' => $e->getCode(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine()
+                ];
+            }
+
+            print_r('<pre>');
+            print_r($result);
+            print_r('</pre>');
+            die;
 
             $model->setData($data);
 

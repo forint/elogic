@@ -87,12 +87,12 @@
                     </item>
                 </item>
             </argument>
-            <!-- Department ID Filter -->
-            <!--<filterRange name="vendor_id">
+            <!-- Vendor ID Filter -->
+            <filterRange name="vendor_id">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="dataScope" xsi:type="string">entity_id</item> &lt;!&ndash; Column name in DB &ndash;&gt;
-                        <item name="label" xsi:type="string" translate="true">ID</item> &lt;!&ndash; Label on grid &ndash;&gt;
+                        <item name="dataScope" xsi:type="string">entity_id</item> <!-- Column name in DB -->
+                        <item name="label" xsi:type="string" translate="true">ID</item> <!-- Label on grid -->
                         <item name="childDefaults" xsi:type="array">
                             <item name="provider" xsi:type="string">vendors_vendor_listing.vendors_vendor_listing.listing_top.listing_filters</item>
                         </item>
@@ -116,16 +116,16 @@
                         </item>
                     </argument>
                 </filterInput>
-            </filterRange>-->
-            <!-- Department name Filter -->
-            <!--<filterInput name="vendor_name">
+            </filterRange>
+            <!-- Vendor name Filter -->
+            <filterInput name="vendor_name">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="dataScope" xsi:type="string">name</item> &lt;!&ndash; Column name in DB &ndash;&gt;
-                        <item name="label" xsi:type="string" translate="true">Name</item> &lt;!&ndash; Label on grid &ndash;&gt;
+                        <item name="dataScope" xsi:type="string">name</item> <!-- Column name in DB -->
+                        <item name="label" xsi:type="string" translate="true">Name</item> <!-- Label on grid -->
                     </item>
                 </argument>
-            </filterInput>-->
+            </filterInput>
         </filters>
         <!-- Filter Search -->
         <filterSearch name="fulltext">
@@ -237,17 +237,12 @@
         </column>
 
         <!-- Date Column -->
-        <column name="date" sortOrder="30">
+        <column name="date" class="Magento\Ui\Component\Listing\Columns\Date">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="width" xsi:type="number">100</item>
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
                     <item name="label" xsi:type="string" translate="true">Date</item>
                     <item name="dateFormat" xsi:type="string" translate="true">MMM dd, YYYY</item>
                 </item>
@@ -255,17 +250,21 @@
         </column>
 
         <!-- Status Column -->
-        <argument name="data" xsi:type="array">
-            <item name="options" xsi:type="object">Elogic\Divine\Model\Source\Vendor\Status</item>
-            <item name="config" xsi:type="array">
-                <item name="filter" xsi:type="string">select</item>
-                <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                <item name="editor" xsi:type="string">select</item>
-                <item name="dataType" xsi:type="string">select</item>
-                <item name="label" xsi:type="string" translate="true">Status</item>
-            </item>
-        </argument>
-        <argument name="optionsProvider" xsi:type="configurableObject">
+        <column name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Elogic\Divine\Model\Source\Vendor\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="editor" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                </item>
+            </argument>
+        </column>
+
+
+        <!--<argument name="optionsProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Elogic\Divine\Model\Source\Vendor\Status</argument>
         </argument>
         <argument name="data" xsi:type="array">
@@ -274,7 +273,7 @@
                 <item name="label" xsi:type="string" translate="true">Status</item>
                 <item name="caption" xsi:type="string" translate="true">Select...</item>
             </item>
-        </argument>
+        </argument>-->
 
         <!--<column name="image" class="Magento\Catalog\Ui\Component\Listing\Columns\Thumbnail" component="Magento_Ui/js/grid/columns/thumbnail" sortOrder="40">
             <settings>

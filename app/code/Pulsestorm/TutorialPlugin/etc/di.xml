@@ -1,0 +1,25 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <!-- START: argument replacement that enables our command -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="Pulsestorm\TutorialPluginTestbedCommand"   xsi:type="object">Pulsestorm\TutorialPlugin\Command\Testbed</item>
+                <item name="Pulsestorm\TutorialPluginInstalledCommand" xsi:type="object">Pulsestorm\TutorialPlugin\Command\Installed</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- START: first new plugins -->
+    <type name="Pulsestorm\TutorialPlugin\Model\Example">
+        <plugin name="pulsestorm_tutorial_plugin_model_example_plugin"
+                type="Pulsestorm\TutorialPlugin\Model\Example\Plugin"
+                sortOrder="20"
+                disabled="false"/>
+    </type>
+    <!-- START: second new plugins -->
+    <type name="Pulsestorm\TutorialPlugin\Model\Example">
+        <plugin name="pulsestorm_tutorial_plugin_model_conflict_plugin2"
+                type="Pulsestorm\TutorialPlugin\Model\Conflict\Plugin2"
+                sortOrder="15"
+                disabled="false"/>
+    </type>
+</config>

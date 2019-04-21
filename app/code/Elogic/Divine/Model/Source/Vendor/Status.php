@@ -31,7 +31,7 @@ class Status implements \Magento\Framework\Data\OptionSourceInterface
      *
      * @return array
      */
-    /*public function toOptionArray()
+    public function toOptionArray()
     {
         $options[] = ['label' => '', 'value' => ''];
         $availableOptions = $this->_vendor->getAvailableStatuses();
@@ -39,25 +39,6 @@ class Status implements \Magento\Framework\Data\OptionSourceInterface
             $options[] = [
                 'label' => $value,
                 'value' => $key,
-            ];
-        }
-        return $options;
-    }*/
-    /**
-     * Get options
-     *
-     * @return array
-     */
-    public function toOptionArray()
-    {
-        $options[] = ['label' => '', 'value' => ''];
-        $departmentCollection = $this->_vendor->getCollection()
-            ->addFieldToSelect('entity_id')
-            ->addFieldToSelect('name');
-        foreach ($departmentCollection as $department) {
-            $options[] = [
-                'label' => $department->getName(),
-                'value' => $department->getId(),
             ];
         }
         return $options;

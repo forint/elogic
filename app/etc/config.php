@@ -224,6 +224,11 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
+        'Pulsestorm_TutorialInstanceObjects' => 1,
+        'Pulsestorm_TutorialPlugin' => 1,
+        'Pulsestorm_TutorialProxy1' => 1,
+        'Pulsestorm_TutorialProxy2' => 1,
+        'Pulsestorm_TutorialVirtualType' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]
