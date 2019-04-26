@@ -7,5 +7,8 @@
         <route id="sense" frontName="sense">
             <module name="Elogic_Divine" before="Magento_Core" after="Magento_Sales" />
         </route>
+        <route id="vendors" frontName="vendors">
+            <module name="Elogic_Divine" />
+        </route>
     </router>
 </config>

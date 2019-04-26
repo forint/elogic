@@ -17,7 +17,7 @@ class Vendor extends AbstractDb
     protected function _construct()
     {
         // Table Name and Primary Key column
-        $this->_init('elogic_divine_vendor', 'entity_id');
+        $this->_init('elogic_divine_vendor_product', 'entity_id');
     }
 
 }

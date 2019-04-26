@@ -10,13 +10,47 @@ use Elogic\Divine\Model\Vendor;
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\DB\Ddl\Table;
+
+/** For Attribute create  */
+use Magento\Eav\Setup\EavSetup;
+use Magento\Eav\Setup\EavSetupFactory;
 
 /**
  * @codeCoverageIgnore
  */
 class UpgradeSchema implements UpgradeSchemaInterface
 {
+
+    /**
+     * EAV setup factory
+     *
+     * @var EavSetupFactory
+     */
+    private $_eavSetupFactory;
+
+    /**
+     * EAV resource setup interface for a module
+     *
+     * @var EavSetupFactory
+     */
+    private $_moduleDataSetup;
+
+    /**
+     * Init
+     *
+     * @param EavSetupFactory $eavSetupFactory
+     */
+    public function __construct(
+        \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory,
+        \Magento\Framework\Setup\ModuleDataSetupInterface $moduleDataSetup
+    )
+    {
+        $this->_moduleDataSetup = $moduleDataSetup;
+        $this->_eavSetupFactory = $eavSetupFactory;
+    }
+
     /**
      * Upgrades DB schema for a module
      *
@@ -35,7 +69,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
             /**
              * Add full text index to our table vendor
              */
-            $tableName = $installer->getTable('elogic_divine_vendor');
+            $tableName = $installer->getTable('elogic_divine_vendor_product');
             $fullTextIntex = array('name', 'description'); // Column with fulltext index, you can put multiple fields
 
 
@@ -54,7 +88,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
              * Add status column to our table vendor
              */
             $setup->getConnection()->addColumn(
-                'elogic_divine_vendor',
+                'elogic_divine_vendor_product',
                 'status',
                 [
                     'type' =>  \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,

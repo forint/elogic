@@ -99,6 +99,10 @@ class Save extends Action
             }
 
             print_r('<pre>');
+            print_r(get_class($this->_eventManager));
+            print_r('</pre>');
+            die;
+            print_r('<pre>');
             print_r($result);
             print_r('</pre>');
             die;

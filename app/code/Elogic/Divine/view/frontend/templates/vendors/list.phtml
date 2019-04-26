@@ -1,0 +1,21 @@
+<?php // die("Naturally, it doesn't work for me");
+$vendorCollection = $this->getLoadedVendorCollection();
+$iterator = 1;
+$total = $vendorCollection->count();
+?>
+<div class="job-wrapper">
+    <ol class="jobs list">
+        <?php foreach($vendorCollection as $vendor): ?>
+            <li class="item<?php echo ($iterator == 1) ? ' first' : ''; ?><?php echo ($total == $iterator) ? ' last' : ''; ?>">
+                <div class="title">
+                    <a href="<?php echo $this->getJobUrl($vendor); ?>" title="<?php echo $vendor->getName(); ?>">
+                        <?php echo $vendor->getName(); ?>
+                    </a>
+                </div>
+                <div class="date"><?php echo $this->formatDate($vendor->getDate()); ?></div>
+                <div class="description"><?php echo $vendor->getDescription(); ?></div>
+            </li>
+            <?php $iterator++; ?>
+        <?php endforeach; ?>
+    </ol>
+</div>

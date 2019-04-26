@@ -30,7 +30,7 @@
     <!-- Simulate our class Elogic\Divine\Model\ResourceModel\Grid\Vendor\Collection -->
     <virtualType name="Elogic\Divine\Model\ResourceModel\Grid\Vendor\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
-            <argument name="mainTable" xsi:type="string">elogic_divine_vendor</argument>
+            <argument name="mainTable" xsi:type="string">elogic_divine_vendor_product</argument>
             <argument name="resourceModel" xsi:type="string">Elogic\Divine\Model\ResourceModel\Vendor</argument>
         </arguments>
     </virtualType>

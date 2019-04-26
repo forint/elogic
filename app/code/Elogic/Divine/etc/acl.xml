@@ -3,14 +3,12 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <!--<resource id="Magento_Backend::content">-->
                 <resource id="Elogic_Divine::vendors" title="Vendors" sortOrder="100" >
                     <resource id="Elogic_Divine::vendor" title="Vendor" sortOrder="10">
                         <resource id="Elogic_Divine::vendor_save" title="Save Vendor" sortOrder="10" />
                         <resource id="Elogic_Divine::vendor_delete" title="Delete Vendor" sortOrder="20" />
                     </resource>
                 </resource>
-                <!--</resource>-->
             </resource>
         </resources>
     </acl>

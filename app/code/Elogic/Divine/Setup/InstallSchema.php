@@ -9,7 +9,7 @@ use Magento\Framework\DB\Ddl\Table;
 class InstallSchema implements InstallSchemaInterface
 {
 
-    private $tableName = 'elogic_divine_vendor';
+    private $tableName = 'elogic_divine_vendor_product';
     /**
      * Installs DB schema for a module
      *
@@ -23,7 +23,7 @@ class InstallSchema implements InstallSchemaInterface
         $installer->startSetup();
 
         /**
-         * Create table 'elogic_divine_vendor'
+         * Create table 'elogic_divine_vendor_product'
          */
 
         $tableName = $installer->getTable($this->tableName);

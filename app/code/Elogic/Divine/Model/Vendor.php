@@ -1,10 +1,13 @@
 <?php
 namespace Elogic\Divine\Model;
 
+use Elogic\Divine\Model\ResourceModel\Vendor as Model;
 use \Magento\Framework\Model\AbstractModel;
 
 class Vendor extends AbstractModel
 {
+    const ENTITY = 'elogic_vendor';
+
     const VENDOR_ID = 'entity_id'; // We define the id fieldname
 
     /**
@@ -34,7 +37,8 @@ class Vendor extends AbstractModel
      * @return void
      */
     protected function _construct() {
-        $this->_init('Elogic\Divine\Model\ResourceModel\Vendor');
+        $this->_init(Model::class);
+        //$this->_init('Elogic\Divine\Model\ResourceModel\Vendor');
     }
 
     public function getEnableStatus() {
