@@ -61,7 +61,9 @@ class InstallSchema implements InstallSchemaInterface
             )
         );
 
+        /** CREATE FULLTEXT INDEX title_body ON articles(title,body) */
         $indexes =  array(
+            'name'
             // No index for this table
         );
 

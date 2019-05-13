@@ -9,6 +9,13 @@
                         <resource id="Elogic_Divine::vendor_delete" title="Delete Vendor" sortOrder="20" />
                     </resource>
                 </resource>
+                <resource id="Elogic_Divine::employees" title="Employees" sortOrder="200" >
+                    <resource id="Elogic_Divine::employee" title="Employee" sortOrder="20">
+                        <resource id="Elogic_Divine::employee_save" title="Save Employee" sortOrder="10" />
+                        <resource id="Elogic_Divine::employee_delete" title="Delete Employee" sortOrder="20" />
+                        <resource id="Elogic_Divine::employee_validate" title="Validate Employee" sortOrder="30" />
+                    </resource>
+                </resource>
             </resource>
         </resources>
     </acl>

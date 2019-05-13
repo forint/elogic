@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
+    <fixture name="adWidget"
+             repository_class="Magento\AdWidget\Test\Repository\AdWidget"
+             handler_interface="Magento\AdWidget\Test\Handler\AdWidget\AdWidgetInterface"
+             class="Magento\AdWidget\Test\Fixture\AdWidget"
+             extends="\Magento\Widget\Test\Fixture\Widget">
+        <field name="custom_field" repository="Magento\AdWidget\Test\Repository\AdWidget\CustomField" group="storefront_properties" />
+    </fixture>
+</config>

@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Elogic_Divine::vendors" title="Vendors" module="Elogic_Divine" sortOrder="100" resource="Elogic_Divine::vendors" />
+        <add id="Elogic_Divine::vendors" title="Divine" module="Elogic_Divine" sortOrder="100" resource="Elogic_Divine::vendors" />
         <add id="Elogic_Divine::vendor" title="Vendor" module="Elogic_Divine" sortOrder="10" parent="Elogic_Divine::vendors" action="vendors/vendor" resource="Elogic_Divine::vendor" />
+        <add id="Elogic_Divine::employee" title="Employee" module="Elogic_Divine" sortOrder="20" parent="Elogic_Divine::vendors" action="employees/employee" resource="Elogic_Divine::employee" />
     </menu>
 </config>

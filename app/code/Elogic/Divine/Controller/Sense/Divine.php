@@ -6,6 +6,7 @@
  * Time: 9:33 PM
  */
 namespace Elogic\Divine\Controller\Sense;
+
 class Divine extends \Magento\Framework\App\Action\Action
 {
     public function execute()

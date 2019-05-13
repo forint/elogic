@@ -17,6 +17,13 @@
                 <item name="url" xsi:type="string">*/*/new</item> <!-- magento will translate it by vendors/vendor/new -->
             </item>
         </item>
+        <!--
+            <item name="back" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\BackButton</item>
+            <item name="delete" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\DeleteButton</item>
+            <item name="reset" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\ResetButton</item>
+            <item name="save" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\SaveAndContinueButton</item>
+         -->
     </argument>
     <!-- Data source -->
     <dataSource name="vendors_vendor_listing_data_source">
