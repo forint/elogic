@@ -7,5 +7,8 @@
         <route id="vendors" frontName="vendors">
             <module name="Elogic_Divine" before="Magento_Backend" />
         </route>
+        <route id="eternal" frontName="eternal">
+            <module name="Elogic_Divine" before="Magento_Backend" />
+        </route>
     </router>
 </config>

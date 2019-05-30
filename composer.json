@@ -11,6 +11,7 @@
         "sort-packages": true
     },
     "require": {
+        "magento/data-migration-tool": "2.3.1",
         "magento/module-bundle-sample-data": "100.3.*",
         "magento/module-catalog-rule-sample-data": "100.3.*",
         "magento/module-catalog-sample-data": "100.3.*",
@@ -80,12 +81,16 @@
     },
     "version": "2.3.1",
     "minimum-stability": "stable",
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://repo.magento.com/"
+        },
+        "data-migration-tool": {
+            "type": "git",
+            "url": "https://github.com/magento/data-migration-tool"
         }
-    ],
+    },
     "extra": {
         "magento-force": "override"
     }

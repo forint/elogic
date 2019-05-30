@@ -4,5 +4,6 @@
         <add id="Elogic_Divine::vendors" title="Divine" module="Elogic_Divine" sortOrder="100" resource="Elogic_Divine::vendors" />
         <add id="Elogic_Divine::vendor" title="Vendor" module="Elogic_Divine" sortOrder="10" parent="Elogic_Divine::vendors" action="vendors/vendor" resource="Elogic_Divine::vendor" />
         <add id="Elogic_Divine::employee" title="Employee" module="Elogic_Divine" sortOrder="20" parent="Elogic_Divine::vendors" action="employees/employee" resource="Elogic_Divine::employee" />
+        <add id="Elogic_Divine::refinement" title="Refinement" module="Elogic_Divine" sortOrder="30" parent="Elogic_Divine::vendors" action="eternal/refinement" resource="Elogic_Divine::refinement" />
     </menu>
 </config>

@@ -101,4 +101,5 @@
 
 
     <virtualType name="Elogic\Divine\VirtualTypes\Adapter\ZendAdapter" type="Zend\Db\Adapter\Adapter" shared="true" />
+
 </config>

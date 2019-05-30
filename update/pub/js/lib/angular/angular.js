@@ -20806,7 +20806,7 @@
     var ngOptionsMinErr = minErr('ngOptions');
     /**
      * @ngdoc directive
-     * @name select
+     * @name Elogic.Divine.view.frontend.web.js.grid.columns.select
      * @restrict E
      *
      * @description
@@ -20947,7 +20947,7 @@
 
         return {
             restrict: 'E',
-            require: ['select', '?ngModel'],
+            require: ['Elogic.Divine.view.frontend.web.js.grid.columns.select', '?ngModel'],
             controller: ['$element', '$scope', '$attrs', function($element, $scope, $attrs) {
                 var self = this,
                     optionsMap = {},

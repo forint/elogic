@@ -16,6 +16,9 @@
                         <resource id="Elogic_Divine::employee_validate" title="Validate Employee" sortOrder="30" />
                     </resource>
                 </resource>
+                <resource id="Elogic_Divine::eternal" title="Eternal" sortOrder="300" >
+                    <resource id="Elogic_Divine::refinement" title="Refinement" sortOrder="30"/>
+                </resource>
             </resource>
         </resources>
     </acl>

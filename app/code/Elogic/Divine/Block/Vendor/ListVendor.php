@@ -70,7 +70,6 @@ class ListVendor extends \Magento\Framework\View\Element\Template
         $this->pageConfig->setDescription($description);
         $this->pageConfig->setKeywords($keywords);
 
-
         $pageMainTitle = $this->getLayout()->getBlock('page.main.title');
         if ($pageMainTitle) {
             $pageMainTitle->setPageTitle($title);

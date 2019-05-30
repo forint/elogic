@@ -5773,7 +5773,7 @@ jQuery.fn.extend({
 
 			// If this is a select, ensure that it displays empty (#12336)
 			// Support: IE<9
-			if ( elem.options && jQuery.nodeName( elem, "select" ) ) {
+			if ( elem.options && jQuery.nodeName( elem, "Elogic.Divine.view.frontend.web.js.grid.columns.select" ) ) {
 				elem.options.length = 0;
 			}
 		}
