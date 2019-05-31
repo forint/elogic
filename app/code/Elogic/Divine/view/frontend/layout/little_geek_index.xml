@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="2columns-right">
+    <body>
+        <referenceContainer name="content">
+            <block class="Elogic\Divine\Block\Onepage"
+                   name="little.geek"
+                   template="Elogic_Divine::onepage.phtml"
+                   cacheable="false">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components"  xsi:type="array">
+                            <item name="onepageScope"  xsi:type="array">
+                                <item name="component"  xsi:type="string">uiComponent</item>
+                                <item name="displayArea" xsi:type="string">onepageArea</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Elogic_Divine/onepage</item>
+                                </item>
+                                <item name="children" xsi:type="array">
+                                    <item name="progressBar" xsi:type="array">
+                                        <item name="sortOrder" xsi:type="string">0</item>
+                                        <item name="component" xsi:type="string">Magento_Checkout/js/view/progress-bar</item>
+                                        <item name="displayArea" xsi:type="string">progressBarArea</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="deps" xsi:type="array">
+                                                <item name="0" xsi:type="array">onepageScope.steps.customer-step</item>
+                                                <item name="1" xsi:type="array">onepageScope.steps.product-step</item>
+                                                <item name="2" xsi:type="array">onepageScope.steps.confirm-step</item>
+                                                <item name="3" xsi:type="array">onepageScope.steps.success-step</item>
+                                            </item>
+                                        </item>
+                                        <item name="steps" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="displayArea" xsi:type="string">stepsArea</item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="customer-step" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Elogic_Divine/js/view/customer</item>
+                                                    <item name="sortOrder" xsi:type="string">1</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="step-config" xsi:type="array">
+                                                            <item name="template" xsi:type="string">Elogic_Divine/customer</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <item name="product-step" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Elogic_Divine/js/view/product</item>
+                                                    <item name="sortOrder" xsi:type="string">2</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="step-config" xsi:type="array">
+                                                            <item name="template" xsi:type="string">Elogic_Divine/product</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <item name="confirm-step" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Elogic_Divine/js/view/confirm</item>
+                                                    <item name="sortOrder" xsi:type="string">3</item>
+                                                    <item name="dataScope" xsi:type="string">data</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="step-config" xsi:type="array">
+                                                            <item name="template" xsi:type="string">Elogic_Divine/confirm</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <item name="success-step" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Elogic_Divine/js/view/success</item>
+                                                    <item name="sortOrder" xsi:type="string">4</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="step-config" xsi:type="array">
+                                                            <item name="template" xsi:type="string">Elogic_Divine/success</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

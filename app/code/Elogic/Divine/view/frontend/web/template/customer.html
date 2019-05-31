@@ -1,0 +1,31 @@
+<li data-bind="visible: isVisible" id="customer">
+    <h3>Customers Step</h3>
+    <div>
+        <span translate="'Search'" />
+        <span><input data-bind="value:request" /></span>
+    </div>
+    <input data-bind="" name="" type="text" >
+    <if args="customers().length">
+        <div>
+            <span>ID</span>
+            <span>First Name</span>
+            <span>Last Name</span>
+            <span>Email</span>
+            <span>Select</span>
+        </div>
+        <each args="data: customers, as: 'customer'">
+            <div>
+                <span text="customer.id"/>
+                <span data-bind="html:customer.firstname"/>
+                <span text="customer.lastname"/>
+                <span text="customer.email"/>
+                <span data-bind="click: function() { $parent.chooseCustomer(customer) }">Choose customer</span>
+            </div>
+        </each>
+        <a href="#" data-bind="click: nextAction">Next</a>
+    </if>
+    <ifnot args="customers().length">
+        <div translate="'Sorry, time is out, you are dead now :)'"/>
+        <div data-bind="i18n: 'Off course, you can continue game as a zombie :)'"/>
+    </ifnot>
+</li>

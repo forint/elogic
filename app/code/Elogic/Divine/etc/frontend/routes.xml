@@ -10,5 +10,8 @@
         <route id="vendors" frontName="vendors">
             <module name="Elogic_Divine" />
         </route>
+        <route id="little" frontName="little">
+            <module name="Elogic_Divine" />
+        </route>
     </router>
 </config>

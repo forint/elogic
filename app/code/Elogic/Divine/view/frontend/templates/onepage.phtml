@@ -1,0 +1,11 @@
+<h3>Onepage Layout Creator - X Magento Init - Розчехлятор</h3>
+<div id="onepageSelectorID" data-bind="onepageScope" class="checkout-container">
+    <!-- ko template: getTemplate('onepageArea') --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#onepageSelectorID": {
+                "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>
+            }
+        }
+    </script>
+</div>

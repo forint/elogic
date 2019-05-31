@@ -257,7 +257,7 @@
         </column>
 
         <!-- Options Column (Test Custom Select) -->
-        <column name="test_select" component="Elogic_Divine/js/select">
+        <!--<column name="test_select" component="Elogic_Divine/js/select">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Elogic\Divine\Model\Source\Refinement\Options</item>
                 <item name="config" xsi:type="array">
@@ -272,7 +272,7 @@
             <settings>
                 <bodyTmpl>Elogic_Divine/grid/cells/text</bodyTmpl>
             </settings>
-        </column>
+        </column>-->
 
 
         <!-- Status Column -->
