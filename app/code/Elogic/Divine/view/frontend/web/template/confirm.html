@@ -1,0 +1,7 @@
+<li data-bind="visible: visible" id="confirm-step-item">
+    <h3>Confirmation Step</h3>
+    <each args="data: elems, as: 'element'">
+        <render if="hasTemplate()" />
+    </each>
+    <a href="#" data-bind="click: nextAction">Next</a>
+</li>

@@ -10,7 +10,8 @@ define([
     'ko',
     'Magento_Checkout/js/model/step-navigator',
     'mage/translate',
-    'MageUtils'
+    'mageUtils',
+    'mage/url',
 ], function (
     $,
     _,
@@ -18,7 +19,8 @@ define([
     ko,
     stepNavigator,
     $t,
-    utils
+    utils,
+    urlBuilder
 ) {
     'use strict';
 
@@ -30,8 +32,14 @@ define([
                 request: 'searchRequest'
             }
         },
-        visible: ko.observable(!quote.isVirtual()),
-
+        visible: ko.observable(true),
+        customersListUrl: '',
+        /**
+         * @return {Boolean}
+         */
+        isVisible: function () {
+            return this.visible;
+        },
         /**
          * @return {exports}
          */
@@ -39,7 +47,7 @@ define([
 
             this._super();
 
-            if (!quote.isVirtual()) {
+            //if (!quote.isVirtual()) {
                 stepNavigator.registerStep(
                     'customer',
                     null,
@@ -48,7 +56,7 @@ define([
                     _.bind(this.navigate, this),
                     10
                 );
-            }
+            //}
 
             var self = this;
             this.initCustomerList();
@@ -62,7 +70,7 @@ define([
         initCustomerList: function(data){
             data = data || {};
             utils.ajaxSubmit({
-                url: this.customersListUrl,
+                url: urlBuilder.build('little/geek/CustomerList/'),
                 data: data
             }, {
                 ajaxSaveType: 'default',
@@ -82,7 +90,6 @@ define([
                ]);
         },
         updateCustomersList: function(data) {
-            debugger;
             this.customers(data.customers);
         },
         chooseCustomer: function(customer) {
@@ -100,6 +107,9 @@ define([
          */
         navigate: function (step) {
             step && step.isVisible(true);
+        },
+        nextAction: function() {
+            stepNavigator.next();
         }
     });
 });

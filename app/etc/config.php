@@ -65,7 +65,6 @@ return [
         'Magento_CustomerGraphQl' => 1,
         'Magento_CustomerImportExport' => 1,
         'Magento_SampleData' => 1,
-        'Magento_DataMigrationTool' => 0,
         'Magento_Deploy' => 1,
         'Magento_Developer' => 1,
         'Magento_Dhl' => 1,
