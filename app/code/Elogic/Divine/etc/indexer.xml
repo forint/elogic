@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="elogic_divine" view_id="elogic_divine" class="Elogic\Divine\Model\Indexer\CustomIndexer" shared_index="elogic_divine">
+        <title translate="true">Custom Indexer</title>
+        <description translate="true">Elogic Divine - Custom Indexer</description>
+        <dependencies>
+            <indexer id="cataloginventory_stock"/>
+        </dependencies>
+    </indexer>
+</config>
